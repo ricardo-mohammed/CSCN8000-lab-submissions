@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>numpy_operations</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>lab2</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7796,72 +7796,50 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=eacead70">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7061bc38">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Lab-1--CSCN8000---Artificial-Intelligence-Algorithms-and-Mathematics--Ricardo-Mohammed-(7500382)--September-21st,-2026">Lab 1 <br/> CSCN8000 - Artificial Intelligence Algorithms and Mathematics <br/> Ricardo Mohammed (7500382) <br/> September 21st, 2026<a class="anchor-link" href="#Lab-1--CSCN8000---Artificial-Intelligence-Algorithms-and-Mathematics--Ricardo-Mohammed-(7500382)--September-21st,-2026">¶</a></h3><hr/>
+<h1 id="Part-A:-Spam-Classification-using-Naive-Bayes">Part A: Spam Classification using Naive Bayes<a class="anchor-link" href="#Part-A:-Spam-Classification-using-Naive-Bayes">¶</a></h1><p>In this section, we will load the Lab 2 dataset, preprocess the text data using vectorization, and train two different Naive Bayes classifiers: <strong>Gaussian Naive Bayes</strong> and <strong>Multinomial Naive Bayes</strong>. Finally, we will compare their performance to determine which model is better suited for classifying spam.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8d6e09de">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="PART-A">PART A<a class="anchor-link" href="#PART-A">¶</a></h2>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0b4c017c">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="1.-This-is-a-Jupyter-notebook-that-demonstrates-some-Numpy-operations.">1. This is a Jupyter notebook that demonstrates some Numpy operations.<a class="anchor-link" href="#1.-This-is-a-Jupyter-notebook-that-demonstrates-some-Numpy-operations.">¶</a></h3>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=db97ba3b">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="2.-Create-an-Array-that-starts-from-integer-values-1-to-20.">2. Create an Array that starts from integer values 1 to 20.<a class="anchor-link" href="#2.-Create-an-Array-that-starts-from-integer-values-1-to-20.">¶</a></h3>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cd400bea">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>We use np.arange(1, 21, 3) to create an array whose first element is 1, then each subsequent element increments the previous one by 3. We go up to but not including 21.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=60dabc8c">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=96b9e429">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.naive_bayes</span><span class="w"> </span><span class="kn">import</span> <span class="n">GaussianNB</span><span class="p">,</span> <span class="n">MultinomialNB</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">classification_report</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.feature_extraction.text</span><span class="w"> </span><span class="kn">import</span> <span class="n">CountVectorizer</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">'ignore'</span><span class="p">)</span>
 
-<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="c1"># 1. Load the dataset</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s1">'../../practical_labs/Lab2_dataset.csv'</span> 
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+<span class="c1"># Inspect the columns to ensure we use the correct names</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Columns in dataset:"</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="c1"># 2. Separate the text feature and target variable</span>
+<span class="n">text_col</span> <span class="o">=</span> <span class="s1">'text'</span>
+<span class="n">target_col</span> <span class="o">=</span> <span class="s1">'label'</span>
+
+<span class="n">X_text</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">text_col</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">target_col</span><span class="p">]</span>
+
+<span class="c1"># Encode the target variable ('ham' -&gt; 0, 'spam' -&gt; 1)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s1">'ham'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'spam'</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
 </pre></div>
 </div>
 </div>
@@ -7874,45 +7852,112 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>[ 1  4  7 10 13 16 19]
+<pre>Columns in dataset: ['Unnamed: 0', 'label', 'text', 'label_num']
 </pre>
 </div>
 </div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Unnamed: 0</th>
+<th>label</th>
+<th>text</th>
+<th>label_num</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>605</td>
+<td>ham</td>
+<td>Subject: enron methanol ; meter # : 988291\nth...</td>
+<td>0</td>
+</tr>
+<tr>
+<th>1</th>
+<td>2349</td>
+<td>ham</td>
+<td>Subject: hpl nom for january 9 , 2001\n( see a...</td>
+<td>0</td>
+</tr>
+<tr>
+<th>2</th>
+<td>3624</td>
+<td>ham</td>
+<td>Subject: neon retreat\nho ho ho , we ' re arou...</td>
+<td>0</td>
+</tr>
+<tr>
+<th>3</th>
+<td>4685</td>
+<td>spam</td>
+<td>Subject: photoshop , windows , office . cheap ...</td>
+<td>1</td>
+</tr>
+<tr>
+<th>4</th>
+<td>2030</td>
+<td>ham</td>
+<td>Subject: re : indian springs\nthis deal is to ...</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7c40e015">
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=729511e3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3.-Create-a-new-array-of-shape-3-with-random-numbers-between-0-and-1.">3. Create a new array of shape 3 with random numbers between 0 and 1.<a class="anchor-link" href="#3.-Create-a-new-array-of-shape-3-with-random-numbers-between-0-and-1.">¶</a></h3>
+<h2 id="Train/Test-Split-&amp;-Text-Vectorization">Train/Test Split &amp; Text Vectorization<a class="anchor-link" href="#Train/Test-Split-&amp;-Text-Vectorization">¶</a></h2><p>We will split the dataset into an 80% training set and a 20% testing set.
+<strong>Crucial Step:</strong> We must split the data <em>before</em> vectorizing to prevent "data leakage" (ensuring the model doesn't learn vocabulary from the test set). We then use <code>CountVectorizer</code> to convert the raw text into numerical word counts.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fc0e20c8">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>We use np.random.rand(n) to create an array of size n whose elements are random numbers between 0 and 1.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d1ff7678">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=487feca4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Create an array of size 3, with random numbers between 0 and 1</span>
-<span class="n">random_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">random_array</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Split data FIRST</span>
+<span class="n">X_train_text</span><span class="p">,</span> <span class="n">X_test_text</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">X_text</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
+<span class="p">)</span>
+
+<span class="c1"># Vectorize the text data (Convert words to numbers)</span>
+<span class="n">vectorizer</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">()</span>
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train_text</span><span class="p">)</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test_text</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Training set size: </span><span class="si">{</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> rows, </span><span class="si">{</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> unique words (features)"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Testing set size: </span><span class="si">{</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> rows, </span><span class="si">{</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> unique words (features)"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7925,58 +7970,48 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>[0.69427032 0.64328022 0.47524894]
+<pre>Training set size: 4136 rows, 45240 unique words (features)
+Testing set size: 1035 rows, 45240 unique words (features)
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=60db8c3b">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b0e8b1fb">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="4.-Create-a-2D-array-%5B%5B10,20,45%5D,-%5B30,12,16%5D,-%5B42,17,56%5D%5D-and-perform-the-following-operations:-Slice-the-2D-array-to-get-the-first-two-rows,-slice-the-2D-array-to-get-the-last-two-rows.">4. Create a 2D array [[10,20,45], [30,12,16], [42,17,56]] and perform the following operations: Slice the 2D array to get the first two rows, slice the 2D array to get the last two rows.<a class="anchor-link" href="#4.-Create-a-2D-array-%5B%5B10,20,45%5D,-%5B30,12,16%5D,-%5B42,17,56%5D%5D-and-perform-the-following-operations:-Slice-the-2D-array-to-get-the-first-two-rows,-slice-the-2D-array-to-get-the-last-two-rows.">¶</a></h3>
+<h2 id="Model-1:-Gaussian-Naive-Bayes">Model 1: Gaussian Naive Bayes<a class="anchor-link" href="#Model-1:-Gaussian-Naive-Bayes">¶</a></h2><p>Gaussian Naive Bayes assumes that the continuous features follow a normal (Gaussian) distribution. We will train the model and evaluate its accuracy on the test set.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6d2cb67a">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>We create the 2D array as specified, and then perform slice opertaions to get the first two rows and last two rows.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5271b68a">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=cb100024">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Create a two-dimensional array with the following values: [10, 20, 45], [30, 12, 16], [42, 17, 56]</span>
-<span class="n">two_dimensional_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">45</span><span class="p">],</span>
-                                  <span class="p">[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">16</span><span class="p">],</span>
-                                  <span class="p">[</span><span class="mi">42</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">56</span><span class="p">]])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># GaussianNB requires dense data, so we convert the sparse matrix to a dense array</span>
+<span class="n">X_train_dense</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+<span class="n">X_test_dense</span> <span class="o">=</span> <span class="n">X_test</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
 
-<span class="c1"># Slice the 2D array to get the first two rows</span>
-<span class="n">sliced_array</span> <span class="o">=</span> <span class="n">two_dimensional_array</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"First two rows:"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">sliced_array</span><span class="p">)</span>
+<span class="c1"># Initialize and train the Gaussian Naive Bayes model</span>
+<span class="n">gnb</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
+<span class="n">gnb</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_dense</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"================================"</span><span class="p">)</span>
+<span class="c1"># Predict on the test set</span>
+<span class="n">y_pred_gnb</span> <span class="o">=</span> <span class="n">gnb</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_dense</span><span class="p">)</span>
 
-<span class="c1"># Slice the 2D array to get the last two rows</span>
-<span class="n">sliced_array</span> <span class="o">=</span> <span class="n">two_dimensional_array</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Last two rows:"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">sliced_array</span><span class="p">)</span>
+<span class="c1"># Evaluate the model</span>
+<span class="n">acc_gnb</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_gnb</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Gaussian Naive Bayes Accuracy: </span><span class="si">{</span><span class="n">acc_gnb</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Classification Report (Gaussian NB):"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_gnb</span><span class="p">,</span> <span class="n">zero_division</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -7989,94 +8024,54 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>First two rows:
-[[10 20 45]
- [30 12 16]]
-================================
-Last two rows:
-[[30 12 16]
- [42 17 56]]
+<pre>Gaussian Naive Bayes Accuracy: 95.46%
+
+Classification Report (Gaussian NB):
+              precision    recall  f1-score   support
+
+           0       0.95      0.99      0.97       742
+           1       0.96      0.87      0.92       293
+
+    accuracy                           0.95      1035
+   macro avg       0.96      0.93      0.94      1035
+weighted avg       0.95      0.95      0.95      1035
+
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cd694f27">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4a063e3e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="5.-Create-two-2x2-arrays-and-demonstrate-how-you-can-stack-the-elements-vertically,-horizontally,-and-split-the-arrays-into-smaller-arrays.">5. Create two 2x2 arrays and demonstrate how you can stack the elements vertically, horizontally, and split the arrays into smaller arrays.<a class="anchor-link" href="#5.-Create-two-2x2-arrays-and-demonstrate-how-you-can-stack-the-elements-vertically,-horizontally,-and-split-the-arrays-into-smaller-arrays.">¶</a></h3>
+<h2 id="Model-2:-Multinomial-Naive-Bayes">Model 2: Multinomial Naive Bayes<a class="anchor-link" href="#Model-2:-Multinomial-Naive-Bayes">¶</a></h2><p>Multinomial Naive Bayes is specifically designed for discrete counts, such as the word counts generated by our <code>CountVectorizer</code>. It is the industry standard for text classification tasks like spam detection.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=92529982">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>We create two 2x2 arrays, then stack and unstack them vertically using np.vstack() and np.vsplit(). We also stack and unstack them horizontally using np.hstack() and np.hsplit().</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5edb1972">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9560212b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">output_divider</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">===============================</span><span class="se">\n</span><span class="s2">"</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Initialize and train the Multinomial Naive Bayes model</span>
+<span class="n">mnb</span> <span class="o">=</span> <span class="n">MultinomialNB</span><span class="p">()</span>
+<span class="n">mnb</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 
-<span class="c1"># Create two 2D arrays, then stack them vertically</span>
-<span class="n">array_a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
-                    <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
+<span class="c1"># Predict on the test set</span>
+<span class="n">y_pred_mnb</span> <span class="o">=</span> <span class="n">mnb</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 
-<span class="n">array_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span>
-                    <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]])</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Array A:"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">array_a</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Array B:"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">array_b</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">output_divider</span><span class="p">)</span>
-
-
-<span class="c1"># Stack the two 2D arrays vertically</span>
-<span class="n">vertical_stack</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">array_a</span><span class="p">,</span> <span class="n">array_b</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Vertical Stack:"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">vertical_stack</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">output_divider</span><span class="p">)</span>
-
-
-<span class="c1"># Stack the two 2D arrays horizontally</span>
-<span class="n">horizontal_stack</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">array_a</span><span class="p">,</span> <span class="n">array_b</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Horizontal Stack:"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">horizontal_stack</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">output_divider</span><span class="p">)</span>
-
-
-<span class="c1"># Split the 2D arrays into two equal parts vertically</span>
-<span class="n">original_a</span><span class="p">,</span> <span class="n">original_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vsplit</span><span class="p">(</span><span class="n">vertical_stack</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Split Vertical:"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Original Array A:"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">original_a</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Original Array B:"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">original_b</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">output_divider</span><span class="p">)</span>
-    
-<span class="c1"># Split the 2D arrays into two equal parts horizontally</span>
-<span class="n">original_a</span><span class="p">,</span> <span class="n">original_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hsplit</span><span class="p">(</span><span class="n">horizontal_stack</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Split Horizontal:"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Original Array A:"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">original_a</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Original Array B:"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">original_b</span><span class="p">)</span>
+<span class="c1"># Evaluate the model</span>
+<span class="n">acc_mnb</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_mnb</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Multinomial Naive Bayes Accuracy: </span><span class="si">{</span><span class="n">acc_mnb</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Classification Report (Multinomial NB):"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_mnb</span><span class="p">,</span> <span class="n">zero_division</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -8089,113 +8084,69 @@ Last two rows:
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Array A:
-[[1 2]
- [3 4]]
-Array B:
-[[5 6]
- [7 8]]
+<pre>Multinomial Naive Bayes Accuracy: 97.20%
 
-===============================
+Classification Report (Multinomial NB):
+              precision    recall  f1-score   support
 
-Vertical Stack:
-[[1 2]
- [3 4]
- [5 6]
- [7 8]]
+           0       0.98      0.98      0.98       742
+           1       0.96      0.95      0.95       293
 
-===============================
+    accuracy                           0.97      1035
+   macro avg       0.97      0.96      0.97      1035
+weighted avg       0.97      0.97      0.97      1035
 
-Horizontal Stack:
-[[1 2 5 6]
- [3 4 7 8]]
-
-===============================
-
-Split Vertical:
-Original Array A:
-[[1 2]
- [3 4]]
-Original Array B:
-[[5 6]
- [7 8]]
-
-===============================
-
-Split Horizontal:
-Original Array A:
-[[1 2]
- [3 4]]
-Original Array B:
-[[5 6]
- [7 8]]
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3388e645">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8ee2706e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="6.-Create-two-matrices-X=-(%5B%5B5,-7,-2%5D,-%5B4,-5,-6%5D,-%5B7,-4-,2%5D%5D)-Y=-(%5B%5B4,-2%5D,-%5B6,-2%5D,-%5B4,-2%5D%5D),-Is-it-possible-to-multiply-these-matrices?-Demonstrate-the-case-when-it-is-not-possible-to.">6. Create two matrices X= ([[5, 7, 2], [4, 5, 6], [7, 4 ,2]]) Y= ([[4, 2], [6, 2], [4, 2]]), Is it possible to multiply these matrices? Demonstrate the case when it is not possible to.<a class="anchor-link" href="#6.-Create-two-matrices-X=-(%5B%5B5,-7,-2%5D,-%5B4,-5,-6%5D,-%5B7,-4-,2%5D%5D)-Y=-(%5B%5B4,-2%5D,-%5B6,-2%5D,-%5B4,-2%5D%5D),-Is-it-possible-to-multiply-these-matrices?-Demonstrate-the-case-when-it-is-not-possible-to.">¶</a></h3>
+<h2 id="Model-Comparison-&amp;-Predictions">Model Comparison &amp; Predictions<a class="anchor-link" href="#Model-Comparison-&amp;-Predictions">¶</a></h2><p>Now we will compare the accuracy of both models. Because Multinomial Naive Bayes is mathematically designed for word-count data, we expect it to outperform Gaussian Naive Bayes, which assumes a continuous bell-curve distribution.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cbe49b47">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>We create two matrices X and Y . In this case, because the number of columns in X equals the number of rows in Y, the matrix multiplication X(Y) is possible. In the case of X(Z), the number of rows in Z is less than the number of columns in X. So the try/except block should catch an error. Due to a probable environment issue, the error message does not appear. But the math holds.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d6f1da43">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=fe2b6bd9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Arrays X and Y as specified</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-              <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> 
-              <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Compare the two models</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"--- Model Comparison ---"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Gaussian NB Accuracy:    </span><span class="si">{</span><span class="n">acc_gnb</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Multinomial NB Accuracy: </span><span class="si">{</span><span class="n">acc_mnb</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 
-<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-              <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> 
-              <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
+<span class="k">if</span> <span class="n">acc_gnb</span> <span class="o">&gt;</span> <span class="n">acc_mnb</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Conclusion: Gaussian Naive Bayes performs better on this dataset."</span><span class="p">)</span>
+    <span class="n">best_model</span> <span class="o">=</span> <span class="n">gnb</span>
+    <span class="n">best_model_name</span> <span class="o">=</span> <span class="s2">"Gaussian NB"</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Conclusion: Multinomial Naive Bayes performs better on this dataset."</span><span class="p">)</span>
+    <span class="n">best_model</span> <span class="o">=</span> <span class="n">mnb</span>
+    <span class="n">best_model_name</span> <span class="o">=</span> <span class="s2">"Multinomial NB"</span>
 
-<span class="c1"># Perform matrix multiplication using np.dot()</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+<span class="c1"># Use the best model to perform predictions on the test data</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">--- Sample Predictions using </span><span class="si">{</span><span class="n">best_model_name</span><span class="si">}</span><span class="s2"> ---"</span><span class="p">)</span>
+<span class="n">predictions_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">'Actual_Label'</span><span class="p">:</span> <span class="n">y_test</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+    <span class="s1">'Predicted_Label'</span><span class="p">:</span> <span class="n">best_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="p">})</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Matrix Multiplication Result:"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">output_divider</span><span class="p">)</span>
+<span class="c1"># Map numbers back to text for easier reading in the output</span>
+<span class="n">predictions_df</span><span class="p">[</span><span class="s1">'Actual_Label'</span><span class="p">]</span> <span class="o">=</span> <span class="n">predictions_df</span><span class="p">[</span><span class="s1">'Actual_Label'</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="mi">0</span><span class="p">:</span> <span class="s1">'ham'</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s1">'spam'</span><span class="p">})</span>
+<span class="n">predictions_df</span><span class="p">[</span><span class="s1">'Predicted_Label'</span><span class="p">]</span> <span class="o">=</span> <span class="n">predictions_df</span><span class="p">[</span><span class="s1">'Predicted_Label'</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="mi">0</span><span class="p">:</span> <span class="s1">'ham'</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s1">'spam'</span><span class="p">})</span>
 
-
-<span class="c1"># In order for X(Z) to be valid, the number of columns in X must equal the number of rows in Z.</span>
-<span class="c1"># To create an invalid matrix multiplication, we can define a new matrix Y with a different ...</span>
-<span class="c1">#  ... number of rows than the number of columns in X.</span>
-
-<span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
-              <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
-
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">invalid_result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Z</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Invalid Matrix Multiplication Result:"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">invalid_result</span><span class="p">)</span>
-<span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Error during matrix multiplication:"</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
-
-<span class="c1">## The code does not print a result due to a possible kernel issue, but the math holds that it would produce an error</span>
+<span class="c1"># Display the first 15 predictions</span>
+<span class="n">display</span><span class="p">(</span><span class="n">predictions_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -8208,67 +8159,159 @@ Original Array B:
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Matrix Multiplication Result:
-[[70 28]
- [70 30]
- [60 26]]
+<pre>--- Model Comparison ---
+Gaussian NB Accuracy:    95.46%
+Multinomial NB Accuracy: 97.20%
 
-===============================
+Conclusion: Multinomial Naive Bayes performs better on this dataset.
 
+--- Sample Predictions using Multinomial NB ---
 </pre>
 </div>
 </div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Actual_Label</th>
+<th>Predicted_Label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>ham</td>
+<td>ham</td>
+</tr>
+<tr>
+<th>1</th>
+<td>spam</td>
+<td>spam</td>
+</tr>
+<tr>
+<th>2</th>
+<td>ham</td>
+<td>ham</td>
+</tr>
+<tr>
+<th>3</th>
+<td>ham</td>
+<td>ham</td>
+</tr>
+<tr>
+<th>4</th>
+<td>ham</td>
+<td>ham</td>
+</tr>
+<tr>
+<th>5</th>
+<td>ham</td>
+<td>ham</td>
+</tr>
+<tr>
+<th>6</th>
+<td>ham</td>
+<td>ham</td>
+</tr>
+<tr>
+<th>7</th>
+<td>ham</td>
+<td>ham</td>
+</tr>
+<tr>
+<th>8</th>
+<td>ham</td>
+<td>ham</td>
+</tr>
+<tr>
+<th>9</th>
+<td>ham</td>
+<td>ham</td>
+</tr>
+<tr>
+<th>10</th>
+<td>ham</td>
+<td>ham</td>
+</tr>
+<tr>
+<th>11</th>
+<td>ham</td>
+<td>ham</td>
+</tr>
+<tr>
+<th>12</th>
+<td>spam</td>
+<td>spam</td>
+</tr>
+<tr>
+<th>13</th>
+<td>spam</td>
+<td>spam</td>
+</tr>
+<tr>
+<th>14</th>
+<td>spam</td>
+<td>spam</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=af3326e1">
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2292d80b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="7.-Create-two-arrays,-x-=-(%5B2,--1,--8%5D)-y-=-(%5B3,-1,--2%5D),-Find-the-Shape,-Number-of-dimensions-of-vector-x.-Reshape-the-vector-x-to-a-matrix-of-size-(3,1)-and-determine-the-number-of-dimensions-after-reshaping-y-to-a-matrix-of-(3,1).">7. Create two arrays, x = ([2, -1, -8]) y = ([3, 1, -2]), Find the Shape, Number of dimensions of vector x. Reshape the vector x to a matrix of size (3,1) and determine the number of dimensions after reshaping y to a matrix of (3,1).<a class="anchor-link" href="#7.-Create-two-arrays,-x-=-(%5B2,--1,--8%5D)-y-=-(%5B3,-1,--2%5D),-Find-the-Shape,-Number-of-dimensions-of-vector-x.-Reshape-the-vector-x-to-a-matrix-of-size-(3,1)-and-determine-the-number-of-dimensions-after-reshaping-y-to-a-matrix-of-(3,1).">¶</a></h3>
+<h1 id="Part-B:-Airbnb-Outlier-Removal">Part B: Airbnb Outlier Removal<a class="anchor-link" href="#Part-B:-Airbnb-Outlier-Removal">¶</a></h1><p>In this section, we will analyze the Airbnb New York City dataset, specifically focusing on the nightly price column. Real estate and rental data is typically heavily right-skewed, meaning a few extremely high-priced luxury listings can drastically skew statistical measures like the mean. We will demonstrate and compare outlier removal techniques using Standard Deviation and the Interquartile Range (IQR) to produce a clean dataset.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cccfcc1c">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Two 1D vectors are created, x and y. We examine the shape of the vector, then reshape it to a matrix of (3,1). Then we confirm the dimensions of the resulting matrices.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=273417cd">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a65ea955">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">])</span>
-<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Load the Airbnb dataset</span>
+<span class="n">airbnb_file</span> <span class="o">=</span> <span class="s1">'../../practical_labs/AB_NYC_2019.csv'</span>
+<span class="n">df_airbnb</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">airbnb_file</span><span class="p">)</span>
 
-<span class="c1"># Find the shape of X</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Shape of X:"</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">output_divider</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Original Dataset Shape:"</span><span class="p">,</span> <span class="n">df_airbnb</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_airbnb</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 
-<span class="c1"># Reshape X to a 3x1 array</span>
-<span class="n">X_reshaped</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Reshaped X:"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">X_reshaped</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">output_divider</span><span class="p">)</span>
+<span class="c1"># Define the price column</span>
+<span class="n">price_col</span> <span class="o">=</span> <span class="s1">'price'</span>
 
-<span class="c1"># Reshape Y to a 3x1 array</span>
-<span class="n">Y_reshaped</span> <span class="o">=</span> <span class="n">Y</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Reshaped Y:"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Y_reshaped</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">"Dimensions of reshaped Y:"</span><span class="p">,</span> <span class="n">Y_reshaped</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
+<span class="c1"># Clean the price column if it contains currency symbols or commas (e.g., '$1,200.00')</span>
+<span class="k">if</span> <span class="n">df_airbnb</span><span class="p">[</span><span class="n">price_col</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="s1">'object'</span><span class="p">:</span>
+    <span class="n">df_airbnb</span><span class="p">[</span><span class="n">price_col</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_airbnb</span><span class="p">[</span><span class="n">price_col</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">'\$'</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">','</span><span class="p">:</span> <span class="s1">''</span><span class="p">},</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Price Column Statistics:"</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_airbnb</span><span class="p">[</span><span class="n">price_col</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -8281,86 +8324,222 @@ Original Array B:
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Shape of X: (3,)
-
-===============================
-
-Reshaped X:
-[[-2]
- [-1]
- [-8]]
-
-===============================
-
-Reshaped Y:
-[[ 3]
- [ 1]
- [-2]]
-
-
-Dimensions of reshaped Y: 2
+<pre>Original Dataset Shape: (48895, 16)
 </pre>
 </div>
 </div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>id</th>
+<th>name</th>
+<th>host_id</th>
+<th>host_name</th>
+<th>neighbourhood_group</th>
+<th>neighbourhood</th>
+<th>latitude</th>
+<th>longitude</th>
+<th>room_type</th>
+<th>price</th>
+<th>minimum_nights</th>
+<th>number_of_reviews</th>
+<th>last_review</th>
+<th>reviews_per_month</th>
+<th>calculated_host_listings_count</th>
+<th>availability_365</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>2539</td>
+<td>Clean &amp; quiet apt home by the park</td>
+<td>2787</td>
+<td>John</td>
+<td>Brooklyn</td>
+<td>Kensington</td>
+<td>40.64749</td>
+<td>-73.97237</td>
+<td>Private room</td>
+<td>149</td>
+<td>1</td>
+<td>9</td>
+<td>2018-10-19</td>
+<td>0.21</td>
+<td>6</td>
+<td>365</td>
+</tr>
+<tr>
+<th>1</th>
+<td>2595</td>
+<td>Skylit Midtown Castle</td>
+<td>2845</td>
+<td>Jennifer</td>
+<td>Manhattan</td>
+<td>Midtown</td>
+<td>40.75362</td>
+<td>-73.98377</td>
+<td>Entire home/apt</td>
+<td>225</td>
+<td>1</td>
+<td>45</td>
+<td>2019-05-21</td>
+<td>0.38</td>
+<td>2</td>
+<td>355</td>
+</tr>
+<tr>
+<th>2</th>
+<td>3647</td>
+<td>THE VILLAGE OF HARLEM....NEW YORK !</td>
+<td>4632</td>
+<td>Elisabeth</td>
+<td>Manhattan</td>
+<td>Harlem</td>
+<td>40.80902</td>
+<td>-73.94190</td>
+<td>Private room</td>
+<td>150</td>
+<td>3</td>
+<td>0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1</td>
+<td>365</td>
+</tr>
+<tr>
+<th>3</th>
+<td>3831</td>
+<td>Cozy Entire Floor of Brownstone</td>
+<td>4869</td>
+<td>LisaRoxanne</td>
+<td>Brooklyn</td>
+<td>Clinton Hill</td>
+<td>40.68514</td>
+<td>-73.95976</td>
+<td>Entire home/apt</td>
+<td>89</td>
+<td>1</td>
+<td>270</td>
+<td>2019-07-05</td>
+<td>4.64</td>
+<td>1</td>
+<td>194</td>
+</tr>
+<tr>
+<th>4</th>
+<td>5022</td>
+<td>Entire Apt: Spacious Studio/Loft by central park</td>
+<td>7192</td>
+<td>Laura</td>
+<td>Manhattan</td>
+<td>East Harlem</td>
+<td>40.79851</td>
+<td>-73.94399</td>
+<td>Entire home/apt</td>
+<td>80</td>
+<td>10</td>
+<td>9</td>
+<td>2018-11-19</td>
+<td>0.10</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9f9e0af7">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
+Price Column Statistics:
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>count    48895.000000
+mean       152.720687
+std        240.154170
+min          0.000000
+25%         69.000000
+50%        106.000000
+75%        175.000000
+max      10000.000000
+Name: price, dtype: float64</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=258004b6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="8.-How-does-broadcasting-work?-Demonstrate-the-subtraction,-multiplication-by-considering-a-3-x-3-matrix.">8. How does broadcasting work? Demonstrate the subtraction, multiplication by considering a 3 x 3 matrix.<a class="anchor-link" href="#8.-How-does-broadcasting-work?-Demonstrate-the-subtraction,-multiplication-by-considering-a-3-x-3-matrix.">¶</a></h3>
+<h2 id="Statistical-Analysis-&amp;-Outlier-Removal">Statistical Analysis &amp; Outlier Removal<a class="anchor-link" href="#Statistical-Analysis-&amp;-Outlier-Removal">¶</a></h2><p>Rental prices are rarely normally distributed; they are usually right-skewed (a long tail of very expensive properties). Because of this, using the <strong>Mean and Standard Deviation</strong> to remove outliers is often ineffective, as the mean itself is pulled toward the expensive tail.</p>
+<p>Instead, the <strong>Median and Interquartile Range (IQR)</strong> is a much more robust method for skewed data, as the median is resistant to extreme values.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bdbf411d">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>A 3x3 matrix is created, as well as a 1D vector. The output shows the result of subtracting and multiplying the vector from the matrix, using broadcasting.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f0b39a0a">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=206ad4e9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Broadcasting is a feature in NumPy that allows for operations between arrays of different shapes.</span>
-<span class="c1"># It automatically expands the smaller array to match the shape of the larger array,</span>
-<span class="c1"># enabling element-wise operations without the need for explicit replication.</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># --- Method 1: Mean and Standard Deviation ---</span>
+<span class="n">mean_price</span> <span class="o">=</span> <span class="n">df_airbnb</span><span class="p">[</span><span class="n">price_col</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">std_price</span> <span class="o">=</span> <span class="n">df_airbnb</span><span class="p">[</span><span class="n">price_col</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
 
-<span class="c1"># 3D matrix with shape (3, 3)</span>
-<span class="n">matrix_3x3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
-                       <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>   
-                       <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
+<span class="c1"># Define outliers as values outside 3 standard deviations from the mean</span>
+<span class="n">lower_bound_mean</span> <span class="o">=</span> <span class="n">mean_price</span> <span class="o">-</span> <span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">std_price</span><span class="p">)</span>
+<span class="n">upper_bound_mean</span> <span class="o">=</span> <span class="n">mean_price</span> <span class="o">+</span> <span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">std_price</span><span class="p">)</span>
 
-<span class="c1"># 1D vector with shape (3,)</span>
-<span class="n">vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">])</span>
+<span class="n">df_clean_mean</span> <span class="o">=</span> <span class="n">df_airbnb</span><span class="p">[(</span><span class="n">df_airbnb</span><span class="p">[</span><span class="n">price_col</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">lower_bound_mean</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_airbnb</span><span class="p">[</span><span class="n">price_col</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">upper_bound_mean</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Method 1 (Mean/Std): Removed </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df_airbnb</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="n">df_clean_mean</span><span class="p">)</span><span class="si">}</span><span class="s2"> outliers. Remaining rows: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df_clean_mean</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
-<span class="c1"># Subtract the vector from each row of the matrix using broadcasting</span>
-<span class="n">subtraction_result</span> <span class="o">=</span> <span class="n">matrix_3x3</span> <span class="o">-</span> <span class="n">vector</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Matrix 3x3:"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">matrix_3x3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Vector:"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">vector</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">output_divider</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Subtraction Result:"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">subtraction_result</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">output_divider</span><span class="p">)</span>
 
-<span class="c1"># Multiplication of a 3D matrix with a 1D vector using broadcasting</span>
-<span class="n">multiplication_result</span> <span class="o">=</span> <span class="n">matrix_3x3</span> <span class="o">*</span> <span class="n">vector</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Multiplication Result:"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">multiplication_result</span><span class="p">)</span>
+<span class="c1"># --- Method 2: Median and IQR (Interquartile Range) ---</span>
+<span class="n">Q1</span> <span class="o">=</span> <span class="n">df_airbnb</span><span class="p">[</span><span class="n">price_col</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="n">Q3</span> <span class="o">=</span> <span class="n">df_airbnb</span><span class="p">[</span><span class="n">price_col</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)</span>
+<span class="n">IQR</span> <span class="o">=</span> <span class="n">Q3</span> <span class="o">-</span> <span class="n">Q1</span>
+
+<span class="c1"># Define outliers as values below Q1 - 1.5*IQR or above Q3 + 1.5*IQR</span>
+<span class="n">lower_bound_iqr</span> <span class="o">=</span> <span class="n">Q1</span> <span class="o">-</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">IQR</span>
+<span class="n">upper_bound_iqr</span> <span class="o">=</span> <span class="n">Q3</span> <span class="o">+</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">IQR</span>
+
+<span class="n">df_clean_iqr</span> <span class="o">=</span> <span class="n">df_airbnb</span><span class="p">[(</span><span class="n">df_airbnb</span><span class="p">[</span><span class="n">price_col</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">lower_bound_iqr</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_airbnb</span><span class="p">[</span><span class="n">price_col</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">upper_bound_iqr</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Method 2 (IQR): Removed </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df_airbnb</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="n">df_clean_iqr</span><span class="p">)</span><span class="si">}</span><span class="s2"> outliers. Remaining rows: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df_clean_iqr</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># Display the bounds for comparison</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">--- Bounds Comparison ---"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Mean/Std Bounds: $</span><span class="si">{</span><span class="n">lower_bound_mean</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> to $</span><span class="si">{</span><span class="n">upper_bound_mean</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"IQR Bounds:      $</span><span class="si">{</span><span class="n">lower_bound_iqr</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> to $</span><span class="si">{</span><span class="n">upper_bound_iqr</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8373,74 +8552,44 @@ Dimensions of reshaped Y: 2
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Matrix 3x3:
-[[1 2 3]
- [4 5 6]
- [7 8 9]]
+<pre>Method 1 (Mean/Std): Removed 388 outliers. Remaining rows: 48507
+Method 2 (IQR): Removed 2972 outliers. Remaining rows: 45923
 
-Vector:
-[10 20 30]
-
-===============================
-
-Subtraction Result:
-[[ -9 -18 -27]
- [ -6 -15 -24]
- [ -3 -12 -21]]
-
-===============================
-
-Multiplication Result:
-[[ 10  40  90]
- [ 40 100 180]
- [ 70 160 270]]
+--- Bounds Comparison ---
+Mean/Std Bounds: $-567.74 to $873.18
+IQR Bounds:      $-90.00 to $334.00
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=693f5f0d">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e5e0e8f8">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="PART-B">PART B<a class="anchor-link" href="#PART-B">¶</a></h2><h3 id="1.Solve-the-following-two-system-of-linear-equations-using-matrices-(find-the-values-of-x1-and-x2)-and-determine-the-number-of-solutions-using-the-functions.-">1.Solve the following two system of linear equations using matrices (find the values of x1 and x2) and determine the number of solutions using the functions. <br/><a class="anchor-link" href="#1.Solve-the-following-two-system-of-linear-equations-using-matrices-(find-the-values-of-x1-and-x2)-and-determine-the-number-of-solutions-using-the-functions.-">¶</a></h3><h3 id="1.-2x1+3x2-4x3=6,x1-4x2=8--2.-3y1-4y2+5y3=10,-y1+2y2-4y3=8">1. 2x1+3x2-4x3=6,x1-4x2=8 <br/> 2. 3y1-4y2+5y3=10,-y1+2y2-4y3=8<a class="anchor-link" href="#1.-2x1+3x2-4x3=6,x1-4x2=8--2.-3y1-4y2+5y3=10,-y1+2y2-4y3=8">¶</a></h3>
+<h2 id="Conclusion-&amp;-Clean-Dataset-Output">Conclusion &amp; Clean Dataset Output<a class="anchor-link" href="#Conclusion-&amp;-Clean-Dataset-Output">¶</a></h2><p>As seen in the bounds comparison, the Mean/Standard Deviation method results in a massive upper bound because the extreme luxury listings pull the mean and standard deviation upward. This method fails to filter out the high-end outliers effectively.</p>
+<p>The IQR method, however, uses the median and quartiles, which are not affected by extreme values. It successfully isolates the core distribution of typical Airbnb prices and removes the extreme outliers, resulting in a much cleaner and more representative dataset.</p>
+<p>Below is the final clean dataset using the IQR method.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0a32921d">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>In each system, we have 3 unknown variables but only two equations. This means there will be infinitely many solutions.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=2b1973af">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0695f1cb">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Display the first 10 rows of the clean dataset</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Cleaned Dataset (using IQR method):"</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_clean_iqr</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
 
-<span class="c1"># System 1: 2 equations, 3 variables</span>
-<span class="n">A1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
-<span class="n">b1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
-
-<span class="c1"># System 2: 2 equations, 3 variables</span>
-<span class="n">A2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">]])</span>
-<span class="n">b2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"System 1 Matrix Shape: </span><span class="si">{</span><span class="n">A1</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"System 2 Matrix Shape: </span><span class="si">{</span><span class="n">A2</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="c1"># Optional: Save the clean dataset to a CSV file if you need to submit it separately</span>
+<span class="c1"># df_clean_iqr.to_csv('airbnb_clean.csv', index=False)</span>
 </pre></div>
 </div>
 </div>
@@ -8453,10 +8602,263 @@ Multiplication Result:
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>System 1 Matrix Shape: (2, 3)
-System 2 Matrix Shape: (2, 3)
+<pre>Cleaned Dataset (using IQR method):
 </pre>
 </div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>id</th>
+<th>name</th>
+<th>host_id</th>
+<th>host_name</th>
+<th>neighbourhood_group</th>
+<th>neighbourhood</th>
+<th>latitude</th>
+<th>longitude</th>
+<th>room_type</th>
+<th>price</th>
+<th>minimum_nights</th>
+<th>number_of_reviews</th>
+<th>last_review</th>
+<th>reviews_per_month</th>
+<th>calculated_host_listings_count</th>
+<th>availability_365</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>2539</td>
+<td>Clean &amp; quiet apt home by the park</td>
+<td>2787</td>
+<td>John</td>
+<td>Brooklyn</td>
+<td>Kensington</td>
+<td>40.64749</td>
+<td>-73.97237</td>
+<td>Private room</td>
+<td>149</td>
+<td>1</td>
+<td>9</td>
+<td>2018-10-19</td>
+<td>0.21</td>
+<td>6</td>
+<td>365</td>
+</tr>
+<tr>
+<th>1</th>
+<td>2595</td>
+<td>Skylit Midtown Castle</td>
+<td>2845</td>
+<td>Jennifer</td>
+<td>Manhattan</td>
+<td>Midtown</td>
+<td>40.75362</td>
+<td>-73.98377</td>
+<td>Entire home/apt</td>
+<td>225</td>
+<td>1</td>
+<td>45</td>
+<td>2019-05-21</td>
+<td>0.38</td>
+<td>2</td>
+<td>355</td>
+</tr>
+<tr>
+<th>2</th>
+<td>3647</td>
+<td>THE VILLAGE OF HARLEM....NEW YORK !</td>
+<td>4632</td>
+<td>Elisabeth</td>
+<td>Manhattan</td>
+<td>Harlem</td>
+<td>40.80902</td>
+<td>-73.94190</td>
+<td>Private room</td>
+<td>150</td>
+<td>3</td>
+<td>0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1</td>
+<td>365</td>
+</tr>
+<tr>
+<th>3</th>
+<td>3831</td>
+<td>Cozy Entire Floor of Brownstone</td>
+<td>4869</td>
+<td>LisaRoxanne</td>
+<td>Brooklyn</td>
+<td>Clinton Hill</td>
+<td>40.68514</td>
+<td>-73.95976</td>
+<td>Entire home/apt</td>
+<td>89</td>
+<td>1</td>
+<td>270</td>
+<td>2019-07-05</td>
+<td>4.64</td>
+<td>1</td>
+<td>194</td>
+</tr>
+<tr>
+<th>4</th>
+<td>5022</td>
+<td>Entire Apt: Spacious Studio/Loft by central park</td>
+<td>7192</td>
+<td>Laura</td>
+<td>Manhattan</td>
+<td>East Harlem</td>
+<td>40.79851</td>
+<td>-73.94399</td>
+<td>Entire home/apt</td>
+<td>80</td>
+<td>10</td>
+<td>9</td>
+<td>2018-11-19</td>
+<td>0.10</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<th>5</th>
+<td>5099</td>
+<td>Large Cozy 1 BR Apartment In Midtown East</td>
+<td>7322</td>
+<td>Chris</td>
+<td>Manhattan</td>
+<td>Murray Hill</td>
+<td>40.74767</td>
+<td>-73.97500</td>
+<td>Entire home/apt</td>
+<td>200</td>
+<td>3</td>
+<td>74</td>
+<td>2019-06-22</td>
+<td>0.59</td>
+<td>1</td>
+<td>129</td>
+</tr>
+<tr>
+<th>6</th>
+<td>5121</td>
+<td>BlissArtsSpace!</td>
+<td>7356</td>
+<td>Garon</td>
+<td>Brooklyn</td>
+<td>Bedford-Stuyvesant</td>
+<td>40.68688</td>
+<td>-73.95596</td>
+<td>Private room</td>
+<td>60</td>
+<td>45</td>
+<td>49</td>
+<td>2017-10-05</td>
+<td>0.40</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<th>7</th>
+<td>5178</td>
+<td>Large Furnished Room Near B'way</td>
+<td>8967</td>
+<td>Shunichi</td>
+<td>Manhattan</td>
+<td>Hell's Kitchen</td>
+<td>40.76489</td>
+<td>-73.98493</td>
+<td>Private room</td>
+<td>79</td>
+<td>2</td>
+<td>430</td>
+<td>2019-06-24</td>
+<td>3.47</td>
+<td>1</td>
+<td>220</td>
+</tr>
+<tr>
+<th>8</th>
+<td>5203</td>
+<td>Cozy Clean Guest Room - Family Apt</td>
+<td>7490</td>
+<td>MaryEllen</td>
+<td>Manhattan</td>
+<td>Upper West Side</td>
+<td>40.80178</td>
+<td>-73.96723</td>
+<td>Private room</td>
+<td>79</td>
+<td>2</td>
+<td>118</td>
+<td>2017-07-21</td>
+<td>0.99</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<th>9</th>
+<td>5238</td>
+<td>Cute &amp; Cozy Lower East Side 1 bdrm</td>
+<td>7549</td>
+<td>Ben</td>
+<td>Manhattan</td>
+<td>Chinatown</td>
+<td>40.71344</td>
+<td>-73.99037</td>
+<td>Entire home/apt</td>
+<td>150</td>
+<td>1</td>
+<td>160</td>
+<td>2019-06-09</td>
+<td>1.33</td>
+<td>4</td>
+<td>188</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7dc46ab0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Reflections/Observations">Reflections/Observations<a class="anchor-link" href="#Reflections/Observations">¶</a></h2><h2 id="Part-A---Spam-Classification">Part A - Spam Classification<a class="anchor-link" href="#Part-A---Spam-Classification">¶</a></h2><h3 id="On-splitting-before-vectorizing">On splitting before vectorizing<a class="anchor-link" href="#On-splitting-before-vectorizing">¶</a></h3><p>Vectorizing is the process of turning non-numerical data into numerical data for the purpose of training the model.</p>
+<p>First, it's important to split before vectorizing. The reason this order is necessary is to prevent data leakage, which could inflate the reported accuracy. If I had vectorized the entire dataset first, the vocabulary and word frequencies would carry from the test set into training. This is what I initially referred to as data leakage.</p>
+<h3 id="On-why-Gaussian-NB-is-a-poor-choice-for-word-counts">On why Gaussian NB is a poor choice for word counts<a class="anchor-link" href="#On-why-Gaussian-NB-is-a-poor-choice-for-word-counts">¶</a></h3><p>Gaussian NB assumes each feature is continuous and follows a roughly normal distribution. This is not true for word counts. Word counts have many zero values since most words don't appear in most emails. Still, Gaussian NB hit ~95% accuracy, which is a reminder that Naive Bayes is forgiving.</p>
+<h3 id="On-why-Multinomial-NB-wins">On why Multinomial NB wins<a class="anchor-link" href="#On-why-Multinomial-NB-wins">¶</a></h3><p>Multinomial NB is perfectly suited to this use case because it expects count data. The improvement is ~1.7 points overall and mainly shows up in spam recall.</p>
+<h2 id="Part-B---Airbnb-Outlier-Removal">Part B - Airbnb Outlier Removal<a class="anchor-link" href="#Part-B---Airbnb-Outlier-Removal">¶</a></h2><h3 id="On-why-the-mean/std-method-underperforms-here">On why the mean/std method underperforms here<a class="anchor-link" href="#On-why-the-mean/std-method-underperforms-here">¶</a></h3><p>The mean ($152.72) sits well above the median ($106) here and the std ($240) is larger than the mean. These are signatures of right-skewed distribution. The 3σ is at ~$873 which is above the 75th percentile of $175. This means the outlier threshold is being dragged upward by the outliers themselves.</p>
+<p>The lower bound from the mean/std method is negative, at ~-$568. That is meaningless for a price. That means the method is wasting half of its range on impossible values.</p>
+<h3 id="On-why-IQR-works-better">On why IQR works better<a class="anchor-link" href="#On-why-IQR-works-better">¶</a></h3><p>The IQR bounds ($-90 to $334) are asymmetric in a way that reflects the actual shape of the distribution.
+As far as outliers are concerned, it removed ~3000 rows vs 388 for the 3σ method. In this case, the model did a good job of removing the genuinely luxury-priced listings.
+The choice of outlier method depends on what the cleaned data will be used for. If the goal is to describe typical pricing, IQR is appropriate.</p>
 </div>
 </div>
 </div>
